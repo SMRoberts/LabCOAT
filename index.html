@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="inventoryApp">
+<head>
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SCRIPTS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  
+   <div class="container">
+      <nav class="navbar navbar-default">
+        <ul class="nav nav-pills navbar-right">
+          <li>
+            <a>Profile</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      
+      
+        <nav class="nav" ng-controller="TabsCtrl">
+          <ul class="nav nav-tabs nav-justified">
+          <li ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab"><a href="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a></li>
+          </ul>
+        </nav>
+
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+</body>
+
+</html>

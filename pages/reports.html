@@ -1,0 +1,43 @@
+<div class="container panel panel-default">
+  <div class="col-md-12 col-xs-12">
+    <div class="">
+      <div class="col-md-5 col-xs-5">
+        <form>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="label label-success">Report Name</span>
+              <br/>
+              <input id="nameInput" type="text">
+            </li>
+            <li class="list-group-item">
+              <span class="label label-success">Report Format</span>
+              <br/>
+              <select name="reportFormat">
+                <option selected>Report Format</option>
+              </select>
+            </li>
+            <li class="list-group-item">
+              <span class="label label-success">Report Date</span>
+              <h4>From:</h4>
+              <select>
+                <option selected>Date</option>
+              </select>
+              <h4>To:</h4>
+              <select>
+                <option selected>Date</option>
+              </select>
+            </li>
+            <li class="list-group-item">
+              <button class="btn btn-default">Generate</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="cold-md-5 col-xs-5">
+        <span class="label label-success">Generated Reports</span>
+        <textarea name="reports" rows="10" cols="30">
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
