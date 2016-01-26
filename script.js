@@ -21,9 +21,9 @@ app.config(function($routeProvider) {
 
   // route for the home page
     .when('/', {
-    templateUrl: 'pages/inventory.html',
+    templateUrl: 'pages/search.html',
     controller: 'mainController',
-    activetab: 'inventory'
+    activetab: 'search'
   })
 
   // route for the about page
@@ -55,9 +55,8 @@ app.config(function($routeProvider) {
 
 function TabsCtrl($scope, $location) {
   $scope.tabs = [
-      { link : '#', label : 'Inventory' },
-      { link : '#/equipment', label : 'Equipment' },
-      { link : '#/import', label : 'Import Tool' },
+      { link : '#', label : 'Search' },
+      { link : '#/import', label : 'Import tool' },
       { link : '#/report', label : 'Reports' }/*,
       { link : '#/admin', label : 'admin' }*/
     ]; 
