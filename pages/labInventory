@@ -1,0 +1,38 @@
+<?php
+require_once ('library.php');										//include the library of functions
+$conn = connectdb();												//connect the database
+
+if(empty($_GET["Sdata"])){											//if there is no search 
+		$term = "0";	
+}else{																//if something was searched for
+		$term = $_GET["Sdata"];										//set the search term to term
+}
+
+//Query for seelcting the chemical information from a slected lab
+$query = "SELECT IUPAC, CL.CAS AS CAS, date_added, Quantity, state FROM room R, chemical_agent CA, chemical_location CL WHERE CL.RoomID = R.RoomID AND CA.CAS = CL.CAS AND R.Room = '{$id}'";
+
+$results = mysqli_query($conn,$query) or die ("Error finding movie in database");
+?>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>CAS</th> 
+		<th>Quantity</th>
+		<th>State</th>
+		<th>Date Added</th>
+	</tr>
+	<?php
+		while ($row = mysqli_fetch_array($results)){			//While there are different labs with the chemical serahced 
+	?>
+	<tr>
+		<td><?php echo $row["IUPAC"]?></td>
+		<td><?php echo $row["CAS"]?></td>
+		<td><?php echo $row["Quantity"]?></td>
+		<td><?php echo $row["state"]?></td>
+		<td><?php echo $row["date_added"]?></td>
+	</tr>
+	<?php 
+		}
+	?>
+</table>
